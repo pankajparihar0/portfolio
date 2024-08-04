@@ -12,7 +12,7 @@
        let f= setInterval(()=>{
             let x =parseInt (document.getElementById('count').innerHTML);
             document.getElementById('count').innerText = x+5+"%";
-            if(x==100){
+            if(x==95){
                 setTimeout(() => {
                     load.classList.remove('load');
                     ring.classList.remove('loader');
