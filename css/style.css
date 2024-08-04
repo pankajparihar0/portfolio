@@ -9,6 +9,7 @@
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
   font-family: "Poppins", sans-serif;
+  
 }
 :root {
   --main-color: #033a80;
@@ -29,6 +30,9 @@
   padding: 50%;
 }
 .loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 1;
   top: 50%;
@@ -39,13 +43,29 @@
   border-radius: 50%;
   border-top-color:black ;
   animation: rotate  1s infinite linear;
-
+}
+.loader span{
+  animation:rotatering  1s infinite linear; ;
+}
+@keyframes fade {
+  from{
+    opacity: 0;
+  }to{
+    opacity: 10;
+  }
 }
 @keyframes rotate {
   form{
     transform: rotate(0deg);
   }to{
     transform: rotate(360deg);
+  }
+}
+@keyframes rotatering {
+  form{
+    transform: rotate(180deg);
+  }to{
+    transform: rotate(-360deg);
   }
 }
 section {
@@ -55,7 +75,11 @@ body.active {
   --text-color: #fff;
   --bg-color: #0f0c27;
 }
+.fade{
+  animation: fade 4s ease-in;
+}
 body {
+ 
   background: var(--bg-color);
   color: var(--text-color);
 }
@@ -133,6 +157,7 @@ header.shadow {
 }
 .home-img img {
   width: 100%;
+  border-radius: 10%;
 }
 .home-text span {
   font-size: var(--medium-font);

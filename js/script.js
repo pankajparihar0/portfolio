@@ -9,11 +9,19 @@
         header.classList.toggle('shadow', window.scrollY > 0);
     });
     window.addEventListener('DOMContentLoaded',()=>{
-        setTimeout(() => {
-            load.classList.remove('load');
-            ring.classList.remove('loader');
-        }, 2000);
-        
+       let f= setInterval(()=>{
+            let x =parseInt (document.getElementById('count').innerHTML);
+            document.getElementById('count').innerText = x+5+"%";
+            if(x==100){
+                setTimeout(() => {
+                    load.classList.remove('load');
+                    ring.classList.remove('loader');
+                    clearInterval(f);
+                },0);
+            }
+
+        },75);
+    
     })
     menu.onclick = () => {
         navbar.classList.toggle('active');
