@@ -188,6 +188,7 @@ header.shadow {
   color: var(--hover);
 }
 .btn {
+  margin: auto;
   display: inline-block;
   background: var(--main-color);
   color: #fff;
@@ -296,6 +297,8 @@ span {
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
 }
 .services-box {
   padding: 20px;
@@ -310,7 +313,16 @@ span {
 }
 .services-box:hover{
  background-color: #02225a;
+ transform: translateZ(150px);
 }
+.services-box:hover+ *{
+  background-color: #02225a73;
+  transform: translateZ(70px) rotateY(30deg);
+ }
+ .services-box:has( + .services-box :hover){
+  background-color: #02225a73;
+  transform: translateZ(70px) rotateY(-30deg);
+ }
 
 .services-box h3 {
   font-size: 1rem;
